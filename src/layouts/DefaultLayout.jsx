@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 const DefaultLayout = () => {
   return (
-    <div className='container mx-auto  '>
+    <div className='container mx-auto'>
       <Header/>
       <div className="w-[1239px] border border-t -my-1"></div>
       <Outlet/>

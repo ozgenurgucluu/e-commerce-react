@@ -48,7 +48,7 @@ const Header = () => {
           </div>
         ))}
       </div>
-      <div className="flex my-1">
+      <div className=" flex my-1">
         <Link to={"/"}>
           <TrendyolLogo fill="black" />
         </Link>

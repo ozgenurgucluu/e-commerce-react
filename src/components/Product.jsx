@@ -37,9 +37,10 @@ const Product = ({
       <div className="flex p-2 text-sm my-2">
         <p className="flex">{raiting} <span className="flex"></span> </p>
       </div>
-      <div className="p-2 text-sm my-2 text-orange-600">
+      {price ? <div className="p-2 text-sm my-2 text-orange-600">
         <p>{price} TL</p>
-      </div>
+      </div> : <div className="mx-auto bg-red-600 text-white rounded-sm px-2"><p>Tükendi</p></div> }
+      
     </Link>
   );
 };

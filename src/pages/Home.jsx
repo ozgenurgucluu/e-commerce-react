@@ -33,7 +33,7 @@ const Home = () => {
               sellerName={product?.seller?.title}
               thumbnail={product.thumbnail}
               raiting={product.raiting}
-              price={product.price}
+              price={product?.price}
               topSeller={product.topSeller}
             />
           ))}
