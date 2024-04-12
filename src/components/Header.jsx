@@ -65,9 +65,9 @@ const Header = () => {
         </div>
 
         <div className="container flex items-center justify-end gap-12 text-sm ">
-          <Link className="flex hover:text-orange-600"><LoginIcon />Giriş Yap</Link>
-          <Link className="flex hover:text-orange-600"><FavoriteIcon/>Favorilerim</Link>
-          <Link className="flex hover:text-orange-600 "><BasketIcon/>Sepetim</Link>
+          <Link className="flex hover:text-orange-600 text-black/70"><LoginIcon />Giriş Yap</Link>
+          <Link className="flex hover:text-orange-600 text-black/70"><FavoriteIcon />Favorilerim</Link>
+          <Link className="flex hover:text-orange-600 text-black/70"><BasketIcon/>Sepetim</Link>
         </div>
       </div>
 

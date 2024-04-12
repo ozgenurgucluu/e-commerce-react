@@ -1,15 +1,15 @@
 import React from "react";
 
-const FavoriteIcon = () => {
+const FavoriteIcon = ({width=25,height=25}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      width="20px"
-      height="19px"
+      width={width}
+      height={height}
       viewBox="0 0 20 19"
       version="1.1"
-      className="h-5 w-5 mx-1 p-0.5"
+      className="p-1"
     >
       <title>favorite_border</title>
       <desc>Created with Sketch.</desc>
@@ -18,7 +18,7 @@ const FavoriteIcon = () => {
         stroke="none"
         stroke-width="1"
         fill="none"
-        fill-rule="evenodd"
+    
       >
         <g id="Two-Tone" transform="translate(-340.000000, -245.000000)">
           <g id="Action" transform="translate(100.000000, 100.000000)">

@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Product = ({
+  id,
   thumbnail,
   raiting,
   price,
@@ -9,8 +11,12 @@ const Product = ({
   topSeller,
   sellerName,
 }) => {
+  const params = useParams();
   return (
-    <Link className="flex flex-col border border-black/20 rounded-md relative">
+    <Link
+    to={`/product/${id}`}
+      className="flex flex-col border border-black/20 rounded-md relative"
+    >
       <img
         className="rounded-md py-1 px-5 mx-auto"
         width={200}
@@ -35,12 +41,19 @@ const Product = ({
         </p>
       </div>
       <div className="flex p-2 text-sm my-2">
-        <p className="flex">{raiting} <span className="flex"></span> </p>
+        <p className="flex">
+          {raiting} <span className="flex"></span>{" "}
+        </p>
       </div>
-      {price ? <div className="p-2 text-sm my-2 text-orange-600">
-        <p>{price} TL</p>
-      </div> : <div className="mx-auto bg-red-600 text-white rounded-sm px-2"><p>Tükendi</p></div> }
-      
+      {price ? (
+        <div className="p-2 text-sm my-2 font-bold text-orange-600">
+          <p>{price} TL</p>
+        </div>
+      ) : (
+        <div className="mx-auto bg-red-600 text-white rounded-sm px-2">
+          <p>Tükendi</p>
+        </div>
+      )}
     </Link>
   );
 };
