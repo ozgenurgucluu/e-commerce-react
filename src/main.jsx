@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import DefaultLayout from "./layouts/DefaultLayout.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Category from "./pages/Category.jsx";
+import Seller from "./pages/Seller.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/category/:categoryId",
         element: <Category />,
+      },
+      {
+        path: "/seller/:sellerId",
+        element: <Seller />,
       },
     ],
   },

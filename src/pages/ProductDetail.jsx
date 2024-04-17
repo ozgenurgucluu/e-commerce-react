@@ -7,6 +7,7 @@ import ProductImage from "../components/ProductImage";
 import FavoriteIcon from "../icons/FavoriteIcon";
 import BoxIcon from "../icons/BoxIcon";
 import SellerWidgetList from "../components/SellerWidgetList";
+import { Link } from "react-router-dom";
 
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState();
@@ -31,24 +32,24 @@ const ProductDetail = () => {
       <div className="container flex flex-col">
         <div className="flex my-14  ">
           <ProductImage
-            
-            images={[productDetail.thumbnail,...productDetail.images]}
+            images={[productDetail.thumbnail, ...productDetail.images]}
           />
 
           <div className="flex flex-col gap-8 w-[544px] -mx-3">
+            <div className="text-lg">
+              {productDetail.sellerId && (
+                <Link
+                  to={`/seller/${productDetail.sellerId}`}
+                  className="font-semibold"
+                >
+                  {productDetail.seller?.title}
+                </Link>
+              )}
+              <span className="mx-1"> {productDetail.title}</span>
+            </div>
             <div>
-              <div className="text-lg">
-                {productDetail.seller && (
-                  <span className="font-semibold">
-                    {productDetail.seller?.title}
-                  </span>
-                )}
-                <span className="mx-1"> {productDetail.title}</span>
-              </div>
-              <div>
-                <span className="font-semibold">{productDetail.raiting}</span>
-                yorumlar
-              </div>
+              <span className="font-semibold">{productDetail.raiting}</span>{" "}
+              Puan
             </div>
 
             <div className="flex flex-col my-9">
@@ -105,13 +106,14 @@ const ProductDetail = () => {
               </div>
             </div>
           </div>
-          <div><SellerWidgetList
-          seller={productDetail.seller.title}
-          rating={productDetail.seller.rating}
-          price={productDetail.price}
-          
-          
-          /></div>
+          <div>
+            <SellerWidgetList
+              sellerId={productDetail.seller.id}
+              seller={productDetail.seller.title}
+              rating={productDetail.seller.rating}
+              price={productDetail.price}
+            />
+          </div>
         </div>
 
         <div className="flex flex-col">
