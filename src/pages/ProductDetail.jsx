@@ -31,8 +31,8 @@ const ProductDetail = () => {
       <div className="container flex flex-col">
         <div className="flex my-14  ">
           <ProductImage
-            thumbnail={productDetail.thumbnail}
-            images={productDetail.images}
+            
+            images={[productDetail.thumbnail,...productDetail.images]}
           />
 
           <div className="flex flex-col gap-8 w-[544px] -mx-3">

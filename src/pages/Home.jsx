@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import Product from "../components/Product";
-import { useParams } from "react-router-dom";
 
 const Home = () => {
-  const params = useParams();
-
   const [products, setProducts] = useState([]);
 
   const getProducts = () => {
@@ -23,15 +20,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container flex p-6 mx-6">
+    <div className="container flex p-7">
       <div className="mx-auto">
         <div>
-          <h1 className="flex text-lg font-semibold -mx-12 my-3 ">
-            Popüler Ürünler
-          </h1>
+          <h1 className="flex text-lg font-semibold  my-3 ">Popüler Ürünler</h1>
         </div>
-        <Link >
-          <div className=" grid grid-cols-5 my-5 gap-5 mx-auto">
+        <Link>
+          <div className=" grid grid-cols-5 my-5 gap-5">
             {products.map((product) => (
               <Product
                 id={product.id}

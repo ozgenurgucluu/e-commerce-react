@@ -8,7 +8,6 @@ import LoginIcon from "../icons/LoginIcon";
 import FavoriteIcon from "../icons/FavoriteIcon";
 import BasketIcon from "../icons/BasketIcon";
 
-
 const Header = () => {
   const businessLink = [
     {
@@ -65,9 +64,18 @@ const Header = () => {
         </div>
 
         <div className="container flex items-center justify-end gap-12 text-sm ">
-          <Link className="flex hover:text-orange-600 text-black/70"><LoginIcon />Giriş Yap</Link>
-          <Link className="flex hover:text-orange-600 text-black/70"><FavoriteIcon />Favorilerim</Link>
-          <Link className="flex hover:text-orange-600 text-black/70"><BasketIcon/>Sepetim</Link>
+          <Link className="flex hover:text-orange-600 text-black/70">
+            <LoginIcon />
+            Giriş Yap
+          </Link>
+          <Link className="flex hover:text-orange-600 text-black/70">
+            <FavoriteIcon />
+            Favorilerim
+          </Link>
+          <Link className="flex hover:text-orange-600 text-black/70">
+            <BasketIcon />
+            Sepetim
+          </Link>
         </div>
       </div>
 
@@ -77,7 +85,7 @@ const Header = () => {
             className="text-sm font-semibold hover:text-orange-600"
             key={category.id}
           >
-            <Link to="/category/categoryId">{category.title}</Link>
+            <Link to={`/category/${category.id}`}>{category.title}</Link>
           </div>
         ))}
       </div>
