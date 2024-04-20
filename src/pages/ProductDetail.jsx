@@ -8,6 +8,7 @@ import FavoriteIcon from "../icons/FavoriteIcon";
 import BoxIcon from "../icons/BoxIcon";
 import SellerWidgetList from "../components/SellerWidgetList";
 import { Link } from "react-router-dom";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState();
@@ -25,11 +26,23 @@ const ProductDetail = () => {
   useEffect(() => {
     getProductDetail();
   }, []);
-  console.log("ben çalıştım", productDetail);
 
   return (
     productDetail && (
       <div className="container flex flex-col">
+        <Breadcrumbs
+          steps={[
+            {
+              title: productDetail.category.title,
+              to: `/category/${productDetail.categoryId}`,
+            },
+            {
+              title: productDetail.title,
+              to: `/product/${productDetail.id}`,
+            },
+          ]}
+        />
+
         <div className="flex my-14  ">
           <ProductImage
             images={[productDetail.thumbnail, ...productDetail.images]}
@@ -107,12 +120,14 @@ const ProductDetail = () => {
             </div>
           </div>
           <div>
-            <SellerWidgetList
-              sellerId={productDetail.seller.id}
-              seller={productDetail.seller.title}
-              rating={productDetail.seller.rating}
-              price={productDetail.price}
-            />
+            {productDetail.seller && (
+              <SellerWidgetList
+                sellerId={productDetail.seller.id}
+                seller={productDetail.seller.title}
+                rating={productDetail.seller.rating}
+                price={productDetail.price}
+              />
+            )}
           </div>
         </div>
 

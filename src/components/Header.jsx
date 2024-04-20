@@ -85,7 +85,12 @@ const Header = () => {
             className="text-sm font-semibold hover:text-orange-600"
             key={category.id}
           >
-            <Link to={`/category/${category.id}`}>{category.title}</Link>
+            <Link
+              className="focus:underline focus:text-orange-600"
+              to={`/category/${category.id}`}
+            >
+              {category.title}
+            </Link>
           </div>
         ))}
       </div>

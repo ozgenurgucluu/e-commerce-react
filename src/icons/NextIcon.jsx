@@ -1,11 +1,12 @@
 import React from "react";
 
-const NextIcon = () => {
+const NextIcon = ({ width = 19, height = 19 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 320 512"
-      className="h-5 w-5"
+      width={width}
+      height={height}
     >
       <path
         fill="currentColor"
