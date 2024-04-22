@@ -4,13 +4,18 @@ import NextIcon from "../icons/NextIcon";
 
 const Breadcrumbs = ({ steps }) => {
   return (
-    <div className="flex gap-1 py-4 ">
-      <Link className="flex items-center hover:underline " to={"/"}>
+    <div className="flex gap-2 py-5 ">
+      <Link className="flex hover:underline " to={"/"}>
         Anasayfa
       </Link>
-      {steps.map((step) => (
-        <Link className="flex items-center gap-1 hover:underline" to={step.to}>
-          <span className="text-orange-600 flex">
+
+      {steps.map((step, index) => (
+        <Link
+          key={index}
+          className="flex items-center hover:underline gap-2 "
+          to={step.to}
+        >
+          <span className="text-orange-600 flex mx-auto ">
             <NextIcon width={14} height={14} />
           </span>
           {step.title}

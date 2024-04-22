@@ -14,15 +14,10 @@ const Product = ({
   const params = useParams();
   return (
     <Link
-    to={`/product/${id}`}
+      to={`/product/${id}`}
       className="flex flex-col border border-black/20 rounded-md relative"
     >
-      <img
-        className="rounded-md py-1 px-5 mx-auto"
-        width={200}
-        height={60}
-        src={thumbnail}
-      />
+      <img className="rounded-t-md w-full " src={thumbnail} />
       {topSeller && (
         <img
           className="absolute top-2 left-2 "
@@ -32,17 +27,16 @@ const Product = ({
         />
       )}
 
-      <div className="p-1">
-        <p className=" max-h-16 block text-sm text-black/70 text-ellipsis">
-          {sellerName && (
-            <span className=" font-semibold text-black p-1">{sellerName}</span>
-          )}
-          {title}
-        </p>
+      <div className="p-1 text-sm text-black/75 ">
+        {sellerName && (
+          <span className=" font-semibold text-black ">{sellerName}</span>
+        )}
+        <span className=" text-ellipsis"> {title}</span>
       </div>
-      <div className="flex p-2 text-sm my-2">
-        <p className="flex">
-          {raiting} <span className="flex"></span>{" "}
+
+      <div className=" p-2 text-sm ">
+        <p>
+          {raiting} <span className="flex"></span>
         </p>
       </div>
       {price ? (

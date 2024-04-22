@@ -32,15 +32,18 @@ const Category = () => {
     getCategoryDetail();
   }, [params.categoryId]);
   return (
-    <div className="mt-4 p-9">
-      {categoryDetail && (
-        <div className="font-semibold text-xl">
-          <strong className="font-bold">"{categoryDetail.title}" </strong>
-          kategorisi için{" "}
-          <strong className="font-bold">{products.length} sonuç </strong>
-          listeleniyor
-        </div>
-      )}
+    <div className="container mx-auto flex flex-col gap-3 my-2">
+      <div className="flex">
+        {categoryDetail && (
+          <div className="font-semibold text-xl">
+            <strong className="font-bold">"{categoryDetail.title}" </strong>
+            kategorisi için{" "}
+            <strong className="font-bold">{products.length} sonuç </strong>
+            listeleniyor
+          </div>
+        )}
+      </div>
+
       <div className=" grid grid-cols-5 my-5 gap-5 mx-auto">
         {products.map((product) => (
           <Product

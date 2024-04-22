@@ -1,6 +1,6 @@
 import React from "react";
 
-const FavoriteIcon = ({width=25,height=25}) => {
+const FavoriteIcon = ({ width = 25, height = 25 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,17 +9,11 @@ const FavoriteIcon = ({width=25,height=25}) => {
       height={height}
       viewBox="0 0 20 19"
       version="1.1"
-      className="p-1"
+      className=""
     >
       <title>favorite_border</title>
       <desc>Created with Sketch.</desc>
-      <g
-        id="Icons"
-        stroke="none"
-        stroke-width="1"
-        fill="none"
-    
-      >
+      <g id="Icons" stroke="none" stroke-width="1" fill="none">
         <g id="Two-Tone" transform="translate(-340.000000, -245.000000)">
           <g id="Action" transform="translate(100.000000, 100.000000)">
             <g

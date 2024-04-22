@@ -18,8 +18,8 @@ const ProductImage = ({ images }) => {
   };
 
   return (
-    <div className="flex flex-col px-10 gap-2">
-      <div className="flex flex-col relative w-[330px]">
+    <div className="flex flex-col gap-3">
+      <div className="flex relative max-w-[410px] ">
         <img
           width="%100"
           src={images[currentIndex]}
@@ -43,16 +43,17 @@ const ProductImage = ({ images }) => {
             onMouseOver={() => setCurrentIndex(index)}
             key={index}
             className={classNames(
-              "border-2 border-black/220 hover:border-orange-600 rounded-md",
+              "border border-black/25 hover:border-orange-600 rounded-md",
               {
                 "border-orange-600": currentIndex == index,
               }
             )}
           >
-            <img src={image} width={41} className="rounded-md" />
+            <img src={image} width={42} className="rounded-md" />
           </div>
         ))}
       </div>
+      <img src="https://cdn.dsmcdn.com/web/production/banners/3-or-6-installmentv2.png" />
     </div>
   );
 };

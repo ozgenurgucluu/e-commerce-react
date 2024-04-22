@@ -1,6 +1,6 @@
 import React from "react";
 
-const TrendyolLogo = () => {
+const TrendyolLogoIcon = ({ width = 25, height = 25 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,8 @@ const TrendyolLogo = () => {
       viewBox="0 0 111 45"
       style={{ enableBackground: "new 0 0 111 45" }}
       xml:space="preserve"
-      className="h-14 w-15"
+      width={width}
+      height={height}
     >
       <style type="text/css">{`.st0{fill:#231F20;}`}</style>
       <path
@@ -23,4 +24,4 @@ const TrendyolLogo = () => {
   );
 };
 
-export default TrendyolLogo;
+export default TrendyolLogoIcon;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const BoxIcon = () => {
+const BoxIcon = ({ width = 25, height = 25 }) => {
   return (
     <div>
       <svg
@@ -13,7 +13,8 @@ const BoxIcon = () => {
         viewBox="0 0 64 64"
         enable-background="new 0 0 64 64"
         xml:space="preserve"
-        className="w-5 h-5"
+        width={width}
+        height={height}
       >
         <g>
           <g>

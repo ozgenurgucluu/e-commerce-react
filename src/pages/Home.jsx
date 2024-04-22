@@ -20,27 +20,22 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container flex p-7">
-      <div className="mx-auto">
-        <div>
-          <h1 className="flex text-lg font-semibold  my-3 ">Popüler Ürünler</h1>
-        </div>
-        <Link>
-          <div className=" grid grid-cols-5 my-5 gap-5">
-            {products.map((product) => (
-              <Product
-                id={product.id}
-                key={product.id}
-                title={product.title}
-                sellerName={product?.seller?.title}
-                thumbnail={product.thumbnail}
-                raiting={product.raiting}
-                price={product?.price}
-                topSeller={product.topSeller}
-              />
-            ))}
-          </div>
-        </Link>
+    <div className="container flex flex-col  mx-auto gap-4">
+      <h1 className="text-xl font-semibold my-4 ">Popüler Ürünler</h1>
+
+      <div className="grid grid-cols-5 gap-8">
+        {products.map((product) => (
+          <Product
+            id={product.id}
+            key={product.id}
+            title={product.title}
+            sellerName={product?.seller?.title}
+            thumbnail={product.thumbnail}
+            raiting={product.raiting}
+            price={product?.price}
+            topSeller={product.topSeller}
+          />
+        ))}
       </div>
     </div>
   );
