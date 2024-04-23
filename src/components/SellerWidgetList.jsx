@@ -5,8 +5,15 @@ import { Link } from "react-router-dom";
 import InvoiceIcon from "../icons/InvoiceIcon";
 import BoxIcon from "../icons/BoxIcon";
 import classNames from "classnames";
+import Modal from "./Modal";
+import { useState } from "react";
+import CloseIcon from "../icons/CloseIcon";
 
 const SellerWidgetList = ({ seller, rating, price, sellerId }) => {
+  const [modal, setModal] = useState(false);
+  const openModal = () => {
+    setModal(true);
+  };
   return (
     <div className="container flex flex-col gap-5 max-w-[210px]">
       <div className="flex flex-col gap-1 border p-3 border-black/25 rounded-md bg-blue-100">
@@ -15,7 +22,38 @@ const SellerWidgetList = ({ seller, rating, price, sellerId }) => {
           <span>Kurumsal Fatura</span>
         </div>
         <div className="text-xs text-black/85 items-center">
-          Kurumsal Faturaya Uygun.<Link className="text-blue-600">İncele</Link>
+          Kurumsal Faturaya Uygun.
+          <Link onClick={openModal} className="text-blue-600">
+            İncele
+          </Link>
+          <Modal show={modal}>
+            <div className=" flex flex-col w-[33vw] gap-3 bg-white rounded-md ">
+              <div className=" relative p-3">
+                <h1 className="absolute text-lg font-semibold text-black">
+                  Kurumsal Satış
+                </h1>
+                <div className="flex justify-end   ">
+                  <button
+                    onClick={() => {
+                      setModal(false);
+                    }}
+                    className=" text-black/65  "
+                  >
+                    <CloseIcon />
+                  </button>
+                </div>
+              </div>
+              <div className="border border-t-1"></div>
+              <p className="text-[14px]/6 text-black/65 p-4">
+                Bu satıcıya ait ürünler kurumsal faturalı alışverişe uygundur.
+                Satıcının ürünlerini sepetinize ekledikten sonra kayıtlı
+                kurumsal fatura adresinizi seçerek / yeni kurumsal fatura adresi
+                oluşturarak alışveriş yapabilirsiniz. Sepetinizde kurumsal
+                faturayla alışverişe uygun olmayan ürünler olması durumunda
+                bireysel fatura ile alışverişinize devam edebilirsiniz
+              </p>
+            </div>
+          </Modal>
         </div>
       </div>
 
