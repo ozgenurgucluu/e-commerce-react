@@ -8,8 +8,9 @@ import classNames from "classnames";
 import Modal from "./Modal";
 import { useState } from "react";
 import CloseIcon from "../icons/CloseIcon";
+import NextIcon from "../icons/NextIcon";
 
-const SellerWidgetList = ({ seller, rating, price, sellerId }) => {
+const SellerWidgetList = ({ seller, raiting, price, sellerId }) => {
   const [modal, setModal] = useState(false);
   const openModal = () => {
     setModal(true);
@@ -23,36 +24,28 @@ const SellerWidgetList = ({ seller, rating, price, sellerId }) => {
         </div>
         <div className="text-xs text-black/85 items-center">
           Kurumsal Faturaya Uygun.
-          <Link onClick={openModal} className="text-blue-600">
+          <Link
+            onClick={openModal}
+            className="text-blue-600 mx-1
+          "
+          >
             İncele
           </Link>
-          <Modal show={modal}>
-            <div className=" flex flex-col w-[33vw] gap-3 bg-white rounded-md ">
-              <div className=" relative p-3">
-                <h1 className="absolute text-lg font-semibold text-black">
-                  Kurumsal Satış
-                </h1>
-                <div className="flex justify-end   ">
-                  <button
-                    onClick={() => {
-                      setModal(false);
-                    }}
-                    className=" text-black/65  "
-                  >
-                    <CloseIcon />
-                  </button>
-                </div>
-              </div>
-              <div className="border border-t-1"></div>
-              <p className="text-[14px]/6 text-black/65 p-4">
-                Bu satıcıya ait ürünler kurumsal faturalı alışverişe uygundur.
-                Satıcının ürünlerini sepetinize ekledikten sonra kayıtlı
-                kurumsal fatura adresinizi seçerek / yeni kurumsal fatura adresi
-                oluşturarak alışveriş yapabilirsiniz. Sepetinizde kurumsal
-                faturayla alışverişe uygun olmayan ürünler olması durumunda
-                bireysel fatura ile alışverişinize devam edebilirsiniz
-              </p>
-            </div>
+          <Modal
+            show={modal}
+            title={"Kurumsal Satış"}
+            onClose={() => {
+              setModal(false);
+            }}
+          >
+            <p className="text-[14px]/6 text-black/65 px-3 pb-3">
+              Bu satıcıya ait ürünler kurumsal faturalı alışverişe uygundur.
+              Satıcının ürünlerini sepetinize ekledikten sonra kayıtlı kurumsal
+              fatura adresinizi seçerek / yeni kurumsal fatura adresi
+              oluşturarak alışveriş yapabilirsiniz. Sepetinizde kurumsal
+              faturayla alışverişe uygun olmayan ürünler olması durumunda
+              bireysel fatura ile alışverişinize devam edebilirsiniz
+            </p>
           </Modal>
         </div>
       </div>
@@ -70,17 +63,17 @@ const SellerWidgetList = ({ seller, rating, price, sellerId }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col   p-3 border border-black/20 rounded-md gap-3">
+      <div className="flex flex-col   p-3 border border-black/20 rounded-md gap-3 relative">
         <div className="text-sm text-blue-500 font-semibold  bg-blue-100 rounded-sm">
           <Link to={`/seller/${sellerId}`}>{seller}</Link>
           <span
-            className={classNames("mx-1  rounded-md text-xs text-white px-4", {
-              "bg-red-500": rating >= 1 && rating <= 3,
-              "bg-orange-600": rating >= 4 && rating <= 5,
-              "bg-green-600": rating >= 6 && rating <= 10,
+            className={classNames("mx-2  rounded-md text-xs text-white px-3", {
+              "bg-red-500": raiting >= 1 && raiting <= 3,
+              "bg-orange-600": raiting >= 4 && raiting <= 7,
+              "bg-green-600": raiting >= 8 && raiting <= 10,
             })}
           >
-            {rating}
+            {raiting}
           </span>
         </div>
         <div className="flex items-center gap-1 text-sm text-gray-500 ">
@@ -98,7 +91,7 @@ const SellerWidgetList = ({ seller, rating, price, sellerId }) => {
         <div className="text-orange-600 text-base p-1">
           {price ? (
             <span className="flex font-bold gap-0.5">
-              {price}
+              {price.toFixed(2)}
               <p>TL</p>
             </span>
           ) : (
@@ -107,6 +100,13 @@ const SellerWidgetList = ({ seller, rating, price, sellerId }) => {
             </span>
           )}
         </div>
+
+        <Link
+          to={`/seller/${sellerId}`}
+          className="p-1 px-3 font-semibold  border border-black/25 absolute top-full left-1/4 -translate-y-1/2  text-[12px] text-black/90 rounded-md bg-gray-200"
+        >
+          MAĞAZAYA GİT
+        </Link>
       </div>
       <div className="flex border border-black/25 rounded-md p-2 bg-orange-100">
         <Link className="flex text-xs items-center gap-2 font-semibold ">

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Product from "../components/Product";
+import ProductList from "../components/ProductList";
 
 const Category = () => {
   const params = useParams();
@@ -34,30 +35,19 @@ const Category = () => {
   return (
     <div className="container mx-auto flex flex-col gap-3 my-2">
       <div className="flex">
-        {categoryDetail && (
+        {categoryDetail ? (
           <div className="font-semibold text-xl">
             <strong className="font-bold">"{categoryDetail.title}" </strong>
             kategorisi için{" "}
             <strong className="font-bold">{products.length} sonuç </strong>
             listeleniyor
           </div>
+        ) : (
+          <span>Ürün Bulunamadı</span>
         )}
       </div>
 
-      <div className=" grid grid-cols-5 my-5 gap-5 mx-auto">
-        {products.map((product) => (
-          <Product
-            id={product.id}
-            key={product.id}
-            title={product.title}
-            sellerName={product?.seller?.title}
-            thumbnail={product.thumbnail}
-            raiting={product.raiting}
-            price={product?.price}
-            topSeller={product.topSeller}
-          />
-        ))}
-      </div>
+      <ProductList product={products} />
     </div>
   );
 };

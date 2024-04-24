@@ -36,7 +36,7 @@ const Header = () => {
   console.log(categories);
 
   return (
-    <div className="flex flex-col  ">
+    <div className="flex flex-col border border-t-2 ">
       <div className="container mx-auto flex items-center justify-end gap-3">
         {businessLink.map((business, index) => (
           <div
@@ -96,7 +96,6 @@ const Header = () => {
           </div>
         ))}
       </div>
-      <div className="border border-t-2"></div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Product from "../components/Product";
 import classNames from "classnames";
+import ProductList from "../components/ProductList";
 
 const Seller = () => {
   const [sellerDetail, setSellerDetail] = useState({});
@@ -40,7 +41,7 @@ const Seller = () => {
         <img
           className="rounded-full p-2 ml-3"
           width={75}
-          src={`http://localhost:3000/${sellerDetail.thumbnail}`}
+          src={sellerDetail.thumbnail}
         />
         <span className="my-auto mx-2 font-bold text-blue-950">
           {sellerDetail.title}
@@ -50,31 +51,19 @@ const Seller = () => {
             "my-auto p-0.5 px-3  rounded-md text-white  text-xs font-semibold",
             {
               "bg-red-500":
-                sellerDetail.rating >= 1 && sellerDetail.rating <= 3,
+                sellerDetail.raiting >= 1 && sellerDetail.raiting <= 3,
               "bg-orange-600":
-                sellerDetail.rating >= 4 && sellerDetail.rating <= 5,
+                sellerDetail.raiting >= 4 && sellerDetail.raiting <= 5,
               "bg-green-600":
-                sellerDetail.rating >= 6 && sellerDetail.rating <= 10,
+                sellerDetail.raiting >= 6 && sellerDetail.raiting <= 10,
             }
           )}
         >
-          {sellerDetail.rating}
+          {sellerDetail.raiting}
         </span>
       </div>
-      <div className=" grid grid-cols-5 my-5 gap-9 mx-auto">
-        {products.map((product) => (
-          <Product
-            id={product.id}
-            key={product.id}
-            title={product.title}
-            sellerName={product?.seller?.title}
-            thumbnail={product.thumbnail}
-            raiting={product.raiting}
-            price={product?.price}
-            topSeller={product.topSeller}
-          />
-        ))}
-      </div>
+
+      <ProductList product={products} />
     </div>
   );
 };

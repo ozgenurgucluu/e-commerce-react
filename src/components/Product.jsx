@@ -41,7 +41,7 @@ const Product = ({
       </div>
       {price ? (
         <div className="p-2 text-sm my-2 font-bold text-orange-600">
-          <p>{price} TL</p>
+          <p>{price.toFixed(2)} TL</p>
         </div>
       ) : (
         <div className="mx-auto bg-red-600 text-white rounded-sm px-2">

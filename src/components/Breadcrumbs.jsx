@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NextIcon from "../icons/NextIcon";
+import classNames from "classnames";
 
 const Breadcrumbs = ({ steps }) => {
   return (
@@ -12,7 +13,9 @@ const Breadcrumbs = ({ steps }) => {
       {steps.map((step, index) => (
         <Link
           key={index}
-          className="flex items-center hover:underline gap-2 "
+          className={classNames("flex items-center hover:underline gap-2 ", {
+            "font-semibold": index == steps.length - 1,
+          })}
           to={step.to}
         >
           <span className="text-orange-600 flex mx-auto ">

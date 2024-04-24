@@ -4,7 +4,7 @@ import BackIcon from "../icons/BackIcon";
 import { Link } from "react-router-dom";
 import NextIcon from "../icons/NextIcon";
 
-const ProductImage = ({ images }) => {
+const ProductImage = ({ images, topSeller }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleBackClick = () => {
@@ -25,6 +25,15 @@ const ProductImage = ({ images }) => {
           src={images[currentIndex]}
           className="border border-black/20 rounded-md "
         />
+        {topSeller && (
+          <img
+            className="absolute top-2 left-2 "
+            width={100}
+            height={100}
+            src="https://cdn.dsmcdn.com/mnresize/250/250/marketing/datascience/automation/2020/12/9/EnCokSatan_202012091129.png"
+          />
+        )}
+        <img />
         <button onClick={handleBackClick}>
           <div className="absolute top-1/2 -translate-y-1/2 left-1 rounded-full  bg-white p-1.5 hover:text-orange-600">
             <BackIcon />

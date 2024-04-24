@@ -52,6 +52,7 @@ const ProductDetail = () => {
         <div className="flex gap-9">
           <ProductImage
             images={[productDetail.thumbnail, ...productDetail.images]}
+            topSeller={productDetail.topSeller}
           />
 
           <div className="flex flex-col flex-1 gap-2">
@@ -74,7 +75,7 @@ const ProductDetail = () => {
                 {productDetail.price ? (
                   <div>
                     <p className="text-xl font-semibold text-orange-600">
-                      {productDetail.price} TL
+                      {productDetail.price.toFixed(2)} TL
                     </p>
                     <p className="flex bg-red-100 rounded-md p-2 items-center text-xs max-w-36">
                       Peşin Fiyatına 3 Taksit!
@@ -144,7 +145,7 @@ const ProductDetail = () => {
               <SellerWidgetList
                 sellerId={productDetail.seller.id}
                 seller={productDetail.seller.title}
-                rating={productDetail.seller.rating}
+                raiting={productDetail.seller.raiting}
                 price={productDetail.price}
               />
             )}
