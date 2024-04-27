@@ -9,7 +9,7 @@ const FavoriteIcon = ({ width = 25, height = 25 }) => {
       height={height}
       viewBox="0 0 20 19"
       version="1.1"
-     
+      className="mx-1"
     >
       <title>favorite_border</title>
       <desc>Created with Sketch.</desc>

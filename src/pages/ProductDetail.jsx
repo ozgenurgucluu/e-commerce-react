@@ -14,8 +14,11 @@ import TrendyolLogoIcon from "../icons/TrendyolLogoIcon";
 import ImportantIcon from "../icons/ImportantIcon";
 import ProductAttribute from "../components/ProductAttribute";
 
+import ProductComment from "../components/ProductComment";
+
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState();
+
   const params = useParams();
 
   const getProductDetail = () => {
@@ -25,8 +28,10 @@ const ProductDetail = () => {
       )
       .then((response) => {
         setProductDetail(response.data);
+        console.log("ben çalıştım");
       });
   };
+
   useEffect(() => {
     getProductDetail();
   }, []);
@@ -48,7 +53,6 @@ const ProductDetail = () => {
             ]}
           />
         </div>
-
         <div className="flex gap-9">
           <ProductImage
             images={[productDetail.thumbnail, ...productDetail.images]}
@@ -66,9 +70,12 @@ const ProductDetail = () => {
                 </Link>
               )}
               <span className="mx-1"> {productDetail.title}</span>
-              <span className="block font-semibold text-black/90 text-base">
-                {productDetail.raiting} Puan
-              </span>
+              <div className="flex gap-2 items-center">
+                <span className="block font-semibold text-black/90 text-base">
+                  {productDetail.raiting} Puan
+                </span>
+                <div className="flex items-center"></div>
+              </div>
             </div>
             <div className="flex flex-col my-8 gap-5">
               <div className="flex flex-col ">
@@ -151,21 +158,24 @@ const ProductDetail = () => {
             )}
           </div>
         </div>
-
-        <div className="container mx-auto flex flex-col gap-5">
-          <span className="flex font-semibold text-xl p-3">Ürün Bilgileri</span>
-          <div className="flex gap-9">
-            <div className="max-w-[200px]">
+        <div className="container mx-auto flex flex-col gap-6 ">
+          <span className="flex font-semibold text-xl ">Ürün Bilgileri</span>
+          <div className="flex gap-6">
+            <div className="max-w-[180px]">
               <img className="w-full" src={productDetail.thumbnail} />
             </div>
-            <div className="">
-              <span className="font-semibold text-base">
-                {productDetail.title}
-              </span>
-              <p>{productDetail.description}</p>
+            <div>
+              <span className="font-semibold">{productDetail.title}</span>
+              <p className="text-sm">{productDetail.description}</p>
             </div>
           </div>
         </div>
+
+        <ProductComment
+          productId={params.productId}
+          raiting={productDetail.raiting}
+          sellerTitle={productDetail.seller.title}
+        ></ProductComment>
       </div>
     )
   );

@@ -8,7 +8,7 @@ const ProductList = ({ product, productDetail }) => {
 
   return (
     <div>
-      <div className="flex justify-end mb-4 gap-1  ">
+      <div className="flex justify-end mb-4 gap-1 py-2 text-sm  ">
         <button
           className={classNames("", {
             "font-bold": grid == 5,

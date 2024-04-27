@@ -36,7 +36,7 @@ const Header = () => {
   console.log(categories);
 
   return (
-    <div className="flex flex-col border border-t-2 ">
+    <div className="flex flex-col border border-t-2 gap-3 ">
       <div className="container mx-auto flex items-center justify-end gap-3">
         {businessLink.map((business, index) => (
           <div
@@ -53,35 +53,35 @@ const Header = () => {
           <TrendyolLogoIcon width={165} height={63} />
         </Link>
 
-        <div className=" flex  flex-1 container mx-auto items-center justify-center ">
-          <div className="flex  text-left ">
+        <div className=" flex flex-1  container mx-auto items-center justify-center ">
+          <div className="flex ">
             <input
-              className="min-w-[498px] h-[42px] bg-gray-200/60 p-2 rounded-md focus:outline-none focus:ring focus:ring-orange-600 focus:bg-white text-sm"
+              className="min-w-[380px] h-[42px] bg-gray-200/60 px-2 rounded-md focus:outline-none focus:ring focus:ring-orange-600 focus:bg-white text-sm"
               placeholder="Aradığınız ürün, kategori veya markayı yazınız"
             ></input>
           </div>
-          <div className="flex justify-center items-center cursor-pointer">
+          <div className="flex items-center cursor-pointer">
             <SearchIcon />
           </div>
         </div>
 
-        <div className="container mx-auto  flex  items-center justify-end gap-12 text-sm  ">
-          <Link className="flex hover:text-orange-600 text-black/70 ">
+        <div className="container mx-auto  flex  items-center justify-end  text-sm gap-3 ">
+          <Link className="flex hover:text-orange-600 text-black/70  ">
             <LoginIcon />
             Giriş Yap
           </Link>
-          <Link className="flex hover:text-orange-600 text-black/70 items-center gap-1">
+          <Link className="flex hover:text-orange-600 text-black/70 items-center ">
             <FavoriteIcon height={16} width={16} />
             Favorilerim
           </Link>
-          <Link className="flex hover:text-orange-600 text-black/70 items-center">
+          <Link className="flex hover:text-orange-600 text-black/70 items-center ">
             <BasketIcon />
             Sepetim
           </Link>
         </div>
       </div>
 
-      <div className="container mx-auto flex justify-center gap-8 p-3 ">
+      <div className="container mx-auto flex justify-center gap-7  ">
         {categories.map((category) => (
           <div
             className="text-sm font-semibold hover:text-orange-600"
