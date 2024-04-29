@@ -7,8 +7,6 @@ import BoxIcon from "../icons/BoxIcon";
 import classNames from "classnames";
 import Modal from "./Modal";
 import { useState } from "react";
-import CloseIcon from "../icons/CloseIcon";
-import NextIcon from "../icons/NextIcon";
 
 const SellerWidgetList = ({ seller, raiting, price, sellerId }) => {
   const [modal, setModal] = useState(false);
@@ -68,8 +66,8 @@ const SellerWidgetList = ({ seller, raiting, price, sellerId }) => {
           <Link to={`/seller/${sellerId}`}>{seller}</Link>
           <span
             className={classNames("mx-2  rounded-md text-xs text-white px-3", {
-              "bg-red-500": raiting >= 1 && raiting <= 3,
-              "bg-orange-600": raiting >= 4 && raiting <= 7,
+              "bg-red-500": raiting >= 1 && raiting <= 4,
+              "bg-orange-600": raiting >= 4 && raiting <= 8,
               "bg-green-600": raiting >= 8 && raiting <= 10,
             })}
           >
