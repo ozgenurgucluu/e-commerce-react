@@ -3,12 +3,12 @@ import { useState } from "react";
 import Product from "../components/Product";
 import classNames from "classnames";
 
-const ProductList = ({ product, productDetail }) => {
+const ProductList = ({ product }) => {
   const [grid, setGrid] = useState(6);
 
   return (
     <div>
-      <div className="flex justify-end mb-4 gap-1 py-2 text-sm  ">
+      <div className="flex justify-end mb-4 gap-1 text-sm  ">
         <button
           className={classNames("", {
             "font-bold": grid == 5,
@@ -41,10 +41,10 @@ const ProductList = ({ product, productDetail }) => {
           "grid-cols-7": grid == 7,
         })}
       >
-        {product.map((product) => (
+        {product.map((product, index) => (
           <Product
             id={product.id}
-            key={product.id}
+            key={index}
             title={product.title}
             sellerName={product?.seller?.title}
             thumbnail={product.thumbnail}

@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Product from "../components/Product";
+import { useParams } from "react-router-dom";
 import ProductList from "../components/ProductList";
 import SaleIcon from "../icons/SaleIcon";
 

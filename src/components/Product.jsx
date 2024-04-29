@@ -15,7 +15,7 @@ const Product = ({
   return (
     <Link
       to={`/product/${id}`}
-      className="flex flex-col border border-black/20 rounded-md relative"
+      className="flex flex-col border border-black/20 rounded-md relative bg-white"
     >
       <img className="rounded-t-md w-full " src={thumbnail} />
       {topSeller && (

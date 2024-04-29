@@ -47,7 +47,6 @@ const Header = () => {
           </div>
         ))}
       </div>
-
       <div className="container mx-auto flex ">
         <Link to={"/"} className="container mx-auto">
           <TrendyolLogoIcon width={165} height={63} />
@@ -80,7 +79,6 @@ const Header = () => {
           </Link>
         </div>
       </div>
-
       <div className="container mx-auto flex justify-center gap-7  ">
         {categories.map((category) => (
           <div

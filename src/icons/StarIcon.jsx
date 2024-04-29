@@ -4,14 +4,14 @@ const StarIcon = ({ width = 15, height = 15 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1.1"
       id="Layer_1"
       x="0px"
       y="0px"
       viewBox="0 0 426.667 426.667"
       style={{ enableBackground: "new 0 0 426.667 426.667" }}
-      xml:space="preserve"
+      xmlSpace="preserve"
       width={width}
       height={height}
     >

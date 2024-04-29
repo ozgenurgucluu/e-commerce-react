@@ -7,7 +7,7 @@ import DefaultLayout from "./layouts/DefaultLayout.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Category from "./pages/Category.jsx";
 import Seller from "./pages/Seller.jsx";
-
+import BestSellers from "./components/BestSellers.jsx";
 const router = createBrowserRouter([
   {
     element: <DefaultLayout />,
@@ -19,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:productId",
         element: <ProductDetail />,
+      },
+      {
+        path: "/category/cok-satanlar",
+        element: <BestSellers />,
       },
       {
         path: "/category/:categoryId",

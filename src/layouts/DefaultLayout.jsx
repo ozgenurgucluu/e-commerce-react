@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const DefaultLayout = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-5">
       <Header />
       <Outlet />
     </div>

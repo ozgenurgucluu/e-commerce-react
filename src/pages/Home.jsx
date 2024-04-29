@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
-
 import ProductList from "../components/ProductList";
+import BestSellersWidget from "../components/BestSellersWidget";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -20,7 +20,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container flex flex-col  mx-auto  ">
+    <div className="container flex flex-col  mx-auto gap-5  ">
+      <BestSellersWidget />
       <ProductList product={products} />
     </div>
   );
