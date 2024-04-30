@@ -52,14 +52,13 @@ const Header = () => {
           <TrendyolLogoIcon width={165} height={63} />
         </Link>
 
-        <div className=" flex flex-1  container mx-auto items-center justify-center ">
-          <div className="flex ">
-            <input
-              className="min-w-[380px] h-[42px] bg-gray-200/60 px-2 rounded-md focus:outline-none focus:ring focus:ring-orange-600 focus:bg-white text-sm"
-              placeholder="Aradığınız ürün, kategori veya markayı yazınız"
-            ></input>
-          </div>
-          <div className="flex items-center cursor-pointer">
+        <div className=" flex flex-1 container mx-auto items-center justify-center ">
+          <input
+            className="min-w-[490px] h-[42px] bg-gray-200/60 px-2 rounded-md focus:outline-none focus:ring focus:ring-orange-600 focus:bg-white text-sm"
+            placeholder="Aradığınız ürün, kategori veya markayı yazınız"
+          ></input>
+
+          <div className="-mx-6 ">
             <SearchIcon />
           </div>
         </div>
