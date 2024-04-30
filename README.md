@@ -1,8 +1,23 @@
-# React + Vite
+# e-commerce-react
+### Home Page Screenshot
+![home page](https://github.com/ozgenurgucluu/e-commerce-react/blob/main/screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-04-30%20135655.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Getting Started with Create React App
+In this project, I cloned the Trendyol web application. Categories, add to cart, favorite, save, login and more work with dynamic components. I used `Tailwind` with `React`
 
-Currently, two official plugins are available:
+## Available Scripts
+In the project directory, you can run:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### `npm-install`
+Install packages in the project
+### `npm run dev`
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
+
+## Backend 
+Install the dependencies:
+### `npm install -g json-server`
+
+Start JSON Server
+### `npx json-server database.json`
+
