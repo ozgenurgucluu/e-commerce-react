@@ -8,7 +8,7 @@ In this project, I cloned the Trendyol web application. Categories, add to cart,
 ## Available Scripts
 In the project directory, you can run:
 
-### `npm-install`
+### `npm install`
 Install packages in the project
 ### `npm run dev`
 Runs the app in the development mode.
