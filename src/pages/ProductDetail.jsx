@@ -13,8 +13,8 @@ import classNames from "classnames";
 import TrendyolLogoIcon from "../icons/TrendyolLogoIcon";
 import ImportantIcon from "../icons/ImportantIcon";
 import ProductAttribute from "../components/ProductAttribute";
-
 import ProductComment from "../components/ProductComment";
+import ProductRaiting from "../components/ProductRaiting";
 
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState();
@@ -70,10 +70,11 @@ const ProductDetail = () => {
                 </Link>
               )}
               <span className="mx-1"> {productDetail.title}</span>
-              <div className="flex gap-2 items-center">
-                <span className="block font-semibold text-black/90 text-base">
-                  {productDetail.raiting} Puan
+              <div className="flex gap-1 ">
+                <span className=" flex font-semibold text-black/90 text-base  ">
+                  {productDetail.raiting}
                 </span>
+                <ProductRaiting raiting={productDetail.raiting} />
                 <div className="flex items-center"></div>
               </div>
             </div>

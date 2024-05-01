@@ -27,13 +27,12 @@ const BestSellersWidget = () => {
         >
           Tüm Ürünler
           <span className="flex items-center">
-            {" "}
-            <NextIcon />{" "}
+            <NextIcon />
           </span>
         </Link>
       </div>
 
-      <div className="container mx-auto grid grid-cols-6 gap-5 bg-slate-50  ">
+      <div className="container mx-auto grid grid-cols-6 gap-5   ">
         {products.map((product) => (
           <Product
             id={product.id}

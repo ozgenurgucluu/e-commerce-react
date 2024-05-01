@@ -6,10 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      color:{
-      
-      }
     },
+      
+    
   },
   plugins: [],
 }

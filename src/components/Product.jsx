@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import ProductRaiting from "./ProductRaiting";
 
 const Product = ({
   id,
@@ -34,10 +35,9 @@ const Product = ({
         <span className=" text-ellipsis"> {title}</span>
       </div>
 
-      <div className=" p-2 text-sm ">
-        <p>
-          {raiting} <span className="flex"></span>
-        </p>
+      <div className=" p-2 text-xs flex items-center ">
+        <strong>{raiting}</strong>
+        <ProductRaiting raiting={raiting} />
       </div>
       {price ? (
         <div className="p-2 text-sm my-2 font-bold text-orange-600">
