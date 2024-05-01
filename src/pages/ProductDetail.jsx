@@ -38,7 +38,7 @@ const ProductDetail = () => {
 
   return (
     productDetail && (
-      <div className="container mx-auto flex flex-col gap-3  ">
+      <div className="container mx-auto flex flex-col gap-6 ">
         <div className="flex">
           <Breadcrumbs
             steps={[
@@ -145,7 +145,22 @@ const ProductDetail = () => {
                 </div>
               </div>
             </div>
-            <ProductAttribute productDetail={productDetail.attributes} />
+            <div className="grid grid-cols-4 my-4 gap-5 ">
+              {productDetail.attributes.map((attribute, index) =>
+                index < 4 ? (
+                  <div key={attribute}>
+                    <div className="flex flex-col w-32 bg-gray-200 p-4 text-xs gap-2 mx-auto items-start">
+                      <span className="text-black/80 truncate max-w-full">
+                        {attribute.title}
+                      </span>
+                      <span className="text-black/80 font-bold truncate max-w-full">
+                        {attribute.value}
+                      </span>
+                    </div>
+                  </div>
+                ) : null
+              )}
+            </div>
           </div>
 
           <div>
@@ -159,9 +174,9 @@ const ProductDetail = () => {
             )}
           </div>
         </div>
-        <div className="container mx-auto flex flex-col gap-6 ">
+        <div className="container mx-auto flex flex-col gap-3 ">
           <span className="flex font-semibold text-xl ">Ürün Bilgileri</span>
-          <div className="flex gap-6">
+          <div className="flex gap-5">
             <div className="max-w-[180px]">
               <img className="w-full" src={productDetail.thumbnail} />
             </div>
@@ -171,6 +186,7 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
+        <ProductAttribute productDetail={productDetail.attributes} />
 
         <ProductComment
           productId={params.productId}
