@@ -145,11 +145,16 @@ const ProductDetail = () => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-4 my-4 gap-5 ">
-              {productDetail.attributes.map((attribute, index) =>
-                index < 4 ? (
-                  <div key={attribute}>
-                    <div className="flex flex-col w-32 bg-gray-200 p-4 text-xs gap-2 mx-auto items-start">
+            <div>
+              <h1 className="font-semibold">Ürünün Öne Çıkan Özellikleri</h1>
+              <div className="grid grid-cols-4 my-4 gap-3  ">
+                {productDetail.attributes
+                  .slice(0, 4)
+                  .map((attribute, index) => (
+                    <div
+                      className="flex flex-col w-full bg-gray-200 p-4 text-xs gap-2 mx-auto items-start"
+                      key={index}
+                    >
                       <span className="text-black/80 truncate max-w-full">
                         {attribute.title}
                       </span>
@@ -157,9 +162,8 @@ const ProductDetail = () => {
                         {attribute.value}
                       </span>
                     </div>
-                  </div>
-                ) : null
-              )}
+                  ))}
+              </div>
             </div>
           </div>
 
