@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ProductImage from "../components/ProductImage";
@@ -15,8 +15,10 @@ import ImportantIcon from "../icons/ImportantIcon";
 import ProductAttribute from "../components/ProductAttribute";
 import ProductComment from "../components/ProductComment";
 import ProductRaiting from "../components/ProductRaiting";
-
+import { CartContext } from "../context/CartContextProvider";
 const ProductDetail = () => {
+  const context = useContext(CartContext);
+  console.log(context);
   const [productDetail, setProductDetail] = useState();
 
   const params = useParams();
@@ -28,7 +30,6 @@ const ProductDetail = () => {
       )
       .then((response) => {
         setProductDetail(response.data);
-        console.log("ben çalıştım");
       });
   };
 
@@ -97,6 +98,9 @@ const ProductDetail = () => {
               </div>
               <div className="flex gap-3">
                 <button
+                  onClick={() =>
+                    context.setCart((prev) => [...prev, productDetail.id])
+                  }
                   className={classNames(
                     "flex justify-center items-center w-full  rounded-md h-12 text-white font-semibold text-[20px]",
                     {

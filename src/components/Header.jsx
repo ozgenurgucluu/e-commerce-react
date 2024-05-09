@@ -33,7 +33,6 @@ const Header = () => {
   useEffect(() => {
     getCategory();
   }, []);
-  console.log(categories);
 
   return (
     <div className="flex flex-col border border-t-2 gap-3 ">

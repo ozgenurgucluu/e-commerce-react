@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import ProductList from "../components/ProductList";
 import BestSellersWidget from "../components/BestSellersWidget";
+import { CartContext } from "../context/CartContextProvider";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [grid, setGrid] = useState(6);
+
   const getProducts = () => {
     axios
       .get("http://localhost:3000/products?_embed=seller")

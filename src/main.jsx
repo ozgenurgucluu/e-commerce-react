@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail.jsx";
 import Category from "./pages/Category.jsx";
 import Seller from "./pages/Seller.jsx";
 import BestSellers from "./components/BestSellers.jsx";
+import CartContextProvider from "./context/CartContextProvider.jsx";
 const router = createBrowserRouter([
   {
     element: <DefaultLayout />,
@@ -37,5 +38,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <CartContextProvider>
+    <RouterProvider router={router} />
+  </CartContextProvider>
 );

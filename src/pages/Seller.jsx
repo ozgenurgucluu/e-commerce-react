@@ -50,12 +50,10 @@ const Seller = () => {
           className={classNames(
             "my-auto p-0.5 px-3  rounded-md text-white  text-xs font-semibold",
             {
-              "bg-red-500":
-                sellerDetail.raiting >= 1 && sellerDetail.raiting <= 3,
+              "bg-red-500": sellerDetail.raiting <= 4,
               "bg-orange-600":
-                sellerDetail.raiting >= 4 && sellerDetail.raiting <= 5,
-              "bg-green-600":
-                sellerDetail.raiting >= 6 && sellerDetail.raiting <= 10,
+                sellerDetail.raiting >= 4 && sellerDetail.raiting <= 6,
+              "bg-green-600": sellerDetail.raiting >= 6,
             }
           )}
         >

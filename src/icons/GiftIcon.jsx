@@ -8,8 +8,8 @@ const GiftIcon = ({ width = 17, height = 17 }) => {
       viewBox="0 0 32 32"
       fill="none"
       stroke="#000"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       strokeWidth="2"
       width={width}
       height={height}
