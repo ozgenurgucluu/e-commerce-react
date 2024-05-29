@@ -2,7 +2,10 @@
 
 ### Home Page Screenshot
 
-![home page](https://github.com/ozgenurgucluu/e-commerce-react/blob/main/screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-04-30%20135655.png)
+![home-page](src/screenshots/home-page.png)
+![home-page](src/screenshots/category-page.png)
+![home-page](src/screenshots/productDetail-page.png)
+![home-page](src/screenshots/sepet.png)
 
 # Getting Started with Create React App
 
