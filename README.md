@@ -2,10 +2,10 @@
 
 ### Home Page Screenshot
 
-![home-page]([src/screenshots/home-page.png](https://github.com/ozgenurgucluu/e-commerce-react/blob/main/screenshots/home-page.png))
-![category-page](src/screenshots/category-page.png)
-![product-detail-page](src/screenshots/productDetail-page.png)
-![sepet-page](src/screenshots/sepet.png)
+![home-page](https://github.com/ozgenurgucluu/e-commerce-react/blob/main/screenshots/home-page.png)
+![category-page](https://github.com/ozgenurgucluu/e-commerce-react/blob/main/screenshots/category-page.png)
+![product-detail-page](https://github.com/ozgenurgucluu/e-commerce-react/blob/main/screenshots/productDetail-page.png)
+![sepet-page](https://github.com/ozgenurgucluu/e-commerce-react/blob/main/screenshots/sepet.png)
 
 # Getting Started with Create React App
 
