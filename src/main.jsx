@@ -9,6 +9,7 @@ import Category from "./pages/Category.jsx";
 import Seller from "./pages/Seller.jsx";
 import BestSellers from "./components/BestSellers.jsx";
 import CartContextProvider from "./context/CartContextProvider.jsx";
+import CartItemsViewer from "./components/CartItemsViewer.jsx";
 const router = createBrowserRouter([
   {
     element: <DefaultLayout />,
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/seller/:sellerId",
         element: <Seller />,
+      },
+      {
+        path: "/CartItemsViewer",
+        element: <CartItemsViewer />,
       },
     ],
   },

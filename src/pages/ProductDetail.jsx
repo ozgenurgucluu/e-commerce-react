@@ -97,20 +97,36 @@ const ProductDetail = () => {
                 )}
               </div>
               <div className="flex gap-3">
-                <button
-                  onClick={() =>
-                    context.setCart((prev) => [...prev, productDetail.id])
-                  }
-                  className={classNames(
-                    "flex justify-center items-center w-full  rounded-md h-12 text-white font-semibold text-[20px]",
-                    {
-                      "bg-orange-600": productDetail.price,
-                      "bg-black": !productDetail.price,
+                {context.cart.findIndex(
+                  (item) => item.id == productDetail.id
+                ) == -1 ? (
+                  <button
+                    onClick={() =>
+                      context.setCart((prev) => [...prev, productDetail])
                     }
-                  )}
-                >
-                  Sepete Ekle
-                </button>
+                    className={classNames(
+                      "flex justify-center items-center w-full  rounded-md h-12 text-white font-semibold text-[20px]",
+                      {
+                        "bg-orange-600": productDetail.price,
+                        "bg-black": !productDetail.price,
+                      }
+                    )}
+                  >
+                    Sepete Ekle
+                  </button>
+                ) : (
+                  <button
+                    className="flex justify-center items-center w-full bg-red-700 rounded-md h-12 text-white font-semibold text-[20px]"
+                    onClick={() =>
+                      context.setCart((prev) =>
+                        prev.filter((item) => item.id !== productDetail.id)
+                      )
+                    }
+                  >
+                    Sepetten Kaldır
+                  </button>
+                )}
+
                 <div className="my-auto rounded-full border border-black/15 bg-white p-2 hover:text-orange-600 hover:border-black/35 text-gray-400">
                   <FavoriteIcon width={32} height={32} />
                 </div>

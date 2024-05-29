@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "../icons/SearchIcon";
 import TrendyolLogoIcon from "../icons/TrendyolLogoIcon";
@@ -7,8 +7,10 @@ import axios from "axios";
 import LoginIcon from "../icons/LoginIcon";
 import FavoriteIcon from "../icons/FavoriteIcon";
 import BasketIcon from "../icons/BasketIcon";
+import { CartContext } from "../context/CartContextProvider";
 
 const Header = () => {
+  const context = useContext(CartContext);
   const businessLink = [
     {
       text: "İndirim Kuponlarım",
@@ -62,7 +64,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="container mx-auto  flex  items-center justify-end  text-sm gap-3 ">
+        <div className="container mx-auto  flex relative items-center justify-end  text-sm gap-3 ">
           <Link className="flex hover:text-orange-600 text-black/70  ">
             <LoginIcon />
             Giriş Yap
@@ -71,8 +73,19 @@ const Header = () => {
             <FavoriteIcon height={16} width={16} />
             Favorilerim
           </Link>
-          <Link className="flex hover:text-orange-600 text-black/70 items-center ">
+
+          <Link
+            to={"/CartItemsViewer"}
+            className="flex hover:text-orange-600 text-black/70 items-center "
+          >
             <BasketIcon />
+            {context.cart.length === 0 ? (
+              ""
+            ) : (
+              <div className=" absolute bg-red-700 rounded-full  p-1 w-4 h-4 text-xs text-white flex items-center justify-center border-full top-4 right-12  ">
+                {context.cart.length}
+              </div>
+            )}
             Sepetim
           </Link>
         </div>

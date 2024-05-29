@@ -3,7 +3,7 @@ import React from "react";
 const ProductAttribute = ({ productDetail }) => {
   return (
     <div className="container mx-auto">
-      <h7 className=" font-semibold text-xl ">Ürün Özellikleri</h7>
+      <h6 className=" font-semibold text-xl ">Ürün Özellikleri</h6>
       <div className="grid grid-cols-2 my-4 gap-5">
         {productDetail.map((attribute) => (
           <div className="gap-2" key={attribute}>
