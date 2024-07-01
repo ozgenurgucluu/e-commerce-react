@@ -13,34 +13,28 @@ const ProductList = ({ product }) => {
     <div>
       <div className="flex items-center  justify-end mb-4 gap-1 text-sm  ">
         <button
-          className={classNames(
-            "hover:text-orange-600 focus:text-orange-600 text-stone-600",
-            {
-              "font-bold": grid == 5,
-            }
-          )}
+          className={classNames("hover:text-orange-600 ", {
+            "text-orange-600": grid == 5,
+            "text-stone-600": grid != 5,
+          })}
           onClick={() => setGrid(5)}
         >
           <FiveIcon />
         </button>
         <button
-          className={classNames(
-            "hover:text-orange-600 focus:text-orange-600 text-stone-600",
-            {
-              "font-bold": grid == 6,
-            }
-          )}
+          className={classNames("hover:text-orange-600 ", {
+            "text-orange-600": grid == 6,
+            "text-stone-600": grid != 6,
+          })}
           onClick={() => setGrid(6)}
         >
           <SixIcon />
         </button>
         <button
-          className={classNames(
-            "hover:text-orange-600 focus:text-orange-600 text-stone-600",
-            {
-              "font-bold": grid == 7,
-            }
-          )}
+          className={classNames("hover:text-orange-600  ", {
+            "text-orange-600": grid == 7,
+            "text-stone-600": grid != 7,
+          })}
           onClick={() => setGrid(7)}
         >
           <SevenIcon />
@@ -48,8 +42,8 @@ const ProductList = ({ product }) => {
       </div>
       <div
         className={classNames("grid gap-5 ", {
-          "grid-cols-5": grid == 5,
-          "grid-cols-6": grid == 6,
+          "grid-cols-5 ": grid == 5,
+          "grid-cols-6 text-orange-600 ": grid == 6,
           "grid-cols-7": grid == 7,
         })}
       >
