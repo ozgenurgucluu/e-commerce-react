@@ -2,36 +2,48 @@ import React from "react";
 import { useState } from "react";
 import Product from "../components/Product";
 import classNames from "classnames";
+import FiveIcon from "../icons/FiveIcon";
+import SixIcon from "../icons/SixIcon";
+import SevenIcon from "../icons/SevenIcon";
 
 const ProductList = ({ product }) => {
   const [grid, setGrid] = useState(6);
 
   return (
     <div>
-      <div className="flex justify-end mb-4 gap-1 text-sm  ">
+      <div className="flex items-center  justify-end mb-4 gap-1 text-sm  ">
         <button
-          className={classNames("", {
-            "font-bold": grid == 5,
-          })}
+          className={classNames(
+            "hover:text-orange-600 focus:text-orange-600 text-stone-600",
+            {
+              "font-bold": grid == 5,
+            }
+          )}
           onClick={() => setGrid(5)}
         >
-          5'li |
+          <FiveIcon />
         </button>
         <button
-          className={classNames("", {
-            "font-bold": grid == 6,
-          })}
+          className={classNames(
+            "hover:text-orange-600 focus:text-orange-600 text-stone-600",
+            {
+              "font-bold": grid == 6,
+            }
+          )}
           onClick={() => setGrid(6)}
         >
-          6'lı |
+          <SixIcon />
         </button>
         <button
-          className={classNames("", {
-            "font-bold": grid == 7,
-          })}
+          className={classNames(
+            "hover:text-orange-600 focus:text-orange-600 text-stone-600",
+            {
+              "font-bold": grid == 7,
+            }
+          )}
           onClick={() => setGrid(7)}
         >
-          7'li
+          <SevenIcon />
         </button>
       </div>
       <div
